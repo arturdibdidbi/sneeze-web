@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneezeify-contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style - Copia.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="space">
+                <img class="img-logo" src="imgs/sneeze.png" alt="Logo da Sneezeify Web Studio">
+                <section class="logo"></section>
+            </div>
+            <nav>
+                <ul class="btn-principal">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li> <button class="btn-important">Peça um orçamento ➜</button> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="cta-contact">
+
+            <img src="imgs/waves.png">
+
+            <p class="phill"><strong class="ball">●</strong> FORMULÁRIO DE CONTATO</p>
+            <div>
+                <h1>Envie-nos uma mensagem</h1>
+                <p class="block-p">Preencha o formulário abaixo, e a nossa equipe entrará em contato no <br>
+                    prazo de <strong class="w"> 24 horas úteis </strong> para agendar uma reunião inicial.</p>
+            </div>
+        </section>
+
+        <section class="form-contact">
+
+            <div class="container-form">
+
+                <div class="container-form-object">
+                    <div class="container-form-content">
+                        <h1>Qual o seu nome?<strong>*</strong></h1>
+                        <input type="text" class="input1" placeholder="Digite seu nome completo">
+                    </div>
+                </div>
+
+                <div class="container-form-object">
+                    <div class="container-form-content">
+                        <h1>Qual o seu email?<strong>*</strong></h1>
+                        <input type="email" class="input2" placeholder="Digite seu melhor email">
+                    </div>
+                </div>
+
+                <div class="container-form-object">
+                    <div class="container-form-content">
+                        <h1>Qual o seu número?<strong>*</strong></h1>
+                        <input type="tel" id="phone" placeholder="Digite seu número">
+                        <p id="error" style="color: red;"></p>
+                    </div>
+                </div>
+
+                <div class="container-form-object">
+                    <div class="container-form-content">
+                        <h1>Qual a sua empresa?</h1>
+                        <input type="text" class="input3" placeholder="Digite o nome de sua empresa">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <section class="container-form-img">
+                <div class="container-form-images">
+                    <h1>Tipo de serviço<strong>*</strong></h1>
+                    <ul id="service-type">
+                        <li data-value="criacao-de-sites">
+                            <span class="check">✔</span>
+                            <img src="imgs/cds.png" alt="criação de sites">
+                            <p>Criação de sites</p>
+                        </li>
+                        <li data-value="seo">
+                            <span class="check">✔</span>
+                            <img src="imgs/SEO.png" alt="SEO">
+                            <p>SEO</p>
+                        </li>
+                        <li data-value="design">
+                            <span class="check">✔</span>
+                            <img src="imgs/DESIGN.png" alt="Design">
+                            <p>Design</p>
+                        </li>
+                        <li data-value="loja-virtual">
+                            <span class="check">✔</span>
+                            <img src="imgs/LOJA-VIRTUAL.png" alt="Loja virtual">
+                            <p>Loja virtual</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container-form-images">
+                    <h1>Que tipo de projeto procura?<strong>*</strong></h1>
+                    <ul id="project-type">
+                        <li data-value="projeto-unico">
+                            <span class="check">✔</span>
+                            <img src="imgs/p1.png" alt="Projeto único">
+                            <p>Projeto único</p>
+                        </li>
+                        <li data-value="manutencao-continua">
+                            <span class="check">✔</span>
+                            <img src="imgs/mc.png" alt="Manutenção contínua">
+                            <p>Manutenção contínua</p>
+                        </li>
+                        <li data-value="ambos">
+                            <span class="check">✔</span>
+                            <img src="imgs/both.png" alt="Ambos">
+                            <p>Ambos</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container-form-images">
+                    <h1>Quanto pretende investir?<strong>*</strong></h1>
+                    <ul id="investment-amount">
+                        <li data-value="100-300">
+                            <span class="check">✔</span>
+                            <img src="imgs/300.png" alt="300 reais">
+                            <p>R$100 - R$300</p>
+                        </li>
+                        <li data-value="300-600">
+                            <span class="check">✔</span>
+                            <img src="imgs/300.png" alt="600 reais">
+                            <p>R$300 - R$600</p>
+                        </li>
+                        <li data-value="600-900">
+                            <span class="check">✔</span>
+                            <img src="imgs/300.png" alt="900 reais">
+                            <p>R$600 - R$900</p>
+                        </li>
+                        <li data-value="900-1200">
+                            <span class="check">✔</span>
+                            <img src="imgs/300.png" alt="1200 reais">
+                            <p>R$900 - R$1200</p>
+                        </li>
+                        <li data-value="1200+">
+                            <span class="check">✔</span>
+                            <img src="imgs/300.png" alt="1200+ reais">
+                            <p>R$1200+</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container-form-images">
+                    <h1>Qual é o prazo de entrega para o seu projeto?<strong>*</strong></h1>
+                    <ul id="delivery-deadline">
+                        <li data-value="para-ontem">
+                            <span class="check">✔</span>
+                            <img src="imgs/MT.png" alt="Para ontem">
+                            <p>Para ontem</p>
+                        </li>
+                        <li data-value="1-mes">
+                            <span class="check">✔</span>
+                            <img src="imgs/1M.png" alt="1 mês">
+                            <p>1 mês</p>
+                        </li>
+                        <li data-value="2-mes">
+                            <span class="check">✔</span>
+                            <img src="imgs/2M.png" alt="2 meses">
+                            <p>2 meses</p>
+                        </li>
+                        <li data-value="3-mes">
+                            <span class="check">✔</span>
+                            <img src="imgs/3M.png" alt="3 meses">
+                            <p>3 meses</p>
+                        </li>
+                       
+                    </ul>
+                </div>
+
+            </section>
+
+            <div class="container-msg">
+
+                <h1 class="form-subtitle">Nos envie uma mensagem sobre os detalhes do seu projeto</h1>
+
+                <textarea placeholder="Esclareça os detalhes"></textarea>
+
+                <button class="btn-cta"> <img src="imgs/paper-plane-svgrepo-com.png"> Enviar mensagem </button>
+
+                <div>
+                    <p><img src="imgs/locker-closed-svgrepo-com.png"> Seus dados estão protegidos e não serão
+                        compartilhados</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+<script type="module" src="script.js"></script>
+<script type="module" src="/tel.js"></script>
+
+</html>

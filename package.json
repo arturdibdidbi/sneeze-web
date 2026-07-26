@@ -1,0 +1,17 @@
+{
+  "name": "sneezeify-tel-input",
+  "version": "1.0.0",
+  "description": "A simple project to test the intl-tel-input library for phone number input.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "gsap": "^3.15.0",
+    "intl-tel-input": "^26.9.1",
+    "vite": "^8.0.3"
+  }
+}

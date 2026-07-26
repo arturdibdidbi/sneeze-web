@@ -1,0 +1,535 @@
+/* ===== RESET / BASE ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+body {
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Archivo Black', 'Inter', sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+    width: 100%;
+    background-color: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.space {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-logo {
+    width: 42px;
+    height: 42px;
+}
+
+nav .btn-principal {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn-principal li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.btn-principal li a:hover {
+    opacity: 1;
+}
+
+.btn-important {
+    background-color: #0d0d0d;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-important:hover {
+    background-color: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== HERO / CTA ===== */
+.cta-contact {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+    min-height: 380px;
+    position: relative;
+    display: flex;
+    z-index: 8;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 20px 40px;
+    overflow: hidden;
+}
+
+.cta-contact img {
+    height: 300%;
+    width: 100%;
+    position: absolute;
+    top: -50%;
+    z-index: -5;
+    opacity: 0.25;
+    object-fit: cover;
+}
+
+.cta-contact h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.cta-contact .block-p {
+    text-align: center !important;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.w {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+/* Badge "FORMULÁRIO DE CONTATO" */
+.phill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 8px 20px 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.phill .ball {
+    color: #FF6A2B;
+    font-size: 10px;
+}
+
+/* ===== FORM CARD ===== */
+.form-contact {
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: #000;
+    border: 1px solid rgb(34, 34, 34);
+    border-radius: 40px;
+    width: 1000px;
+    max-width: 92vw;
+    margin: 0 auto 5%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ===== TEXT INPUTS ===== */
+.container-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    width: 100%;
+    color: white;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+.container-form-object {
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: 200;
+    width: 100%;
+}
+
+.container-form-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-form-object h1 {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container-form-object h1::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    flex-shrink: 0;
+}
+
+.container-form-object h1 strong {
+    color: #FF6A2B;
+}
+
+input {
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px rgb(58, 58, 58);
+    padding: 16px 16px 16px 44px;
+    background-color: #070708;
+    color: rgb(240, 240, 240);
+    font-size: 15px;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(255, 106, 43, 0.6);
+}
+
+#phone {
+    background-image: url('imgs/brasil-flag.png');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 22px auto;
+}
+
+.input1 {
+    background-image: url('imgs/name.png');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 20px auto;
+}
+
+.input2 {
+    background-image: url('imgs/gmail.png');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 20px auto;
+}
+
+.input3 {
+    background-image: url('imgs/empress.png');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 20px auto;
+}
+
+/* ===== OPTION GROUPS (service, project, investment, deadline) ===== */
+.container-form-img {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container-form-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    width: 100%;
+    position: relative;
+    gap: 14px;
+}
+
+.container-form-images h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container-form-images h1::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    flex-shrink: 0;
+}
+
+.container-form-images h1 strong {
+    color: #FF6A2B;
+}
+
+.container-form-images ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    width: 100%;
+}
+
+.container-form-images ul li {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1 1 0;
+    min-width: 100px;
+    background-color: #0a0a0a;
+    border: 1px solid rgb(34, 34, 34);
+    border-radius: 16px;
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.container-form-images ul li:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.container-form-images ul li img {
+    width: 40%;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.container-form-images ul li p {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+}
+
+/* Checkmark badge, hidden by default */
+.container-form-images ul li .check {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FF6A2B;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+
+.container-form-images ul li.selected {
+    border-color: #FF6A2B;
+    background-color: rgba(255, 106, 43, 0.06);
+}
+
+.container-form-images ul li.selected .check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.container-msg {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.container-msg h1 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(15px, 3vw, 18px);
+    font-weight: 600;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    max-width: 900px;
+    height: 100px;
+    background-color: #070708;
+    color: rgb(247, 247, 247);
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 15px;
+    border: solid 1px rgb(58, 58, 58);
+    padding: 16px 20px;
+    resize: vertical;
+    font-family: 'Inter', sans-serif;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+textarea:focus {
+    border-color: rgba(184, 184, 184, 0.6);
+    outline: none;
+}
+
+.container-msg .btn-cta {
+    width: 50%;
+    min-width: 260px;
+    margin: 5px 0 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(180deg, #FF7A3C 0%, #FF5B14 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.container-msg .btn-cta:hover {
+    filter: brightness(1.08);
+}
+
+.container-msg .btn-cta img {
+    width: 18px;
+    height: 18px;
+}
+
+.active {
+    transition:all 0.5s ease-in-out !important;
+border: 1px solid white !important;    
+transform: scale(1);
+}
+
+.check-icon {
+width: 20px !important;
+height: 20px !important;
+z-index: 10 !important;
+position: absolute;
+animation: 0.5s show ease-in-out 1 forwards !important;
+pointer-events: none !important;
+border-radius: 100% !important;
+padding:0 0 0 0 !important;
+}
+
+.container-msg div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+.container-msg div img {
+    width: 16px;
+    height: 16px;
+}
+
+.container-msg p {
+    color: rgb(150, 150, 150);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.iti__country {
+background-color: rgb(34, 34, 34) !important;
+background: rgb(34, 34, 34) !important;
+
+}
+
+.iti__dropdown-content {
+background-color:#111111 !important;
+}
+
+
+@media (max-width: 700px) {
+    .form-contact {
+        padding: 30px 20px;
+        border-radius: 24px;
+    }
+
+    .container-form {
+        grid-template-columns: 1fr;
+    }
+
+    .container-form-images ul {
+        gap: 10px;
+    }
+
+    .container-form-images ul li {
+        min-width: 80px;
+    }
+
+    .container-msg .btn-cta {
+        width: 100%;
+    }
+}
