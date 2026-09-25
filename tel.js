@@ -1,10 +1,12 @@
+
 import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
 import { kn } from "intl-tel-input/i18n";
 
 document.addEventListener("DOMContentLoaded", function () {
   const phone = document.getElementById("phone");
-
+  const btnCta = document.querySelector(".btn-cta")
+  console.log("JAVASCRIPT CARREGOU");
   const iti = intlTelInput(phone, {
     initialCountry: "br"
   });
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (item.classList.contains('active')) {
 
         item.classList.remove('active')
-        item.querySelector('.check-icon').remove().closest();
+        item.querySelector('.check-icon').remove();
       }
 
       else {
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const check = document.createElement('img');
 
-        check.src = "/imgs/check_icon.png";
+        check.src = "/imgs/check2.png";
 
         check.classList.add('check-icon');
 
@@ -84,12 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const li2 = document.querySelectorAll("#service-type > li");
 
   li2.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (event) {
 
       if (item.classList.contains('active')) {
 
         item.classList.remove('active')
-        item.querySelector('.check-icon').remove().closest();
+        item.querySelector('.check-icon').remove();
       }
 
       else {
@@ -99,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const check = document.createElement('img');
 
-        check.src = "/imgs/check_icon.png";
+        check.src = "/imgs/check2.png";
 
         check.classList.add('check-icon');
 
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const check = document.createElement('img');
 
-        check.src = "/imgs/check_icon.png";
+        check.src = "/imgs/check2.png";
 
         check.classList.add('check-icon');
 
@@ -198,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const check = document.createElement('img');
 
-        check.src = "/imgs/check_icon.png";
+        check.src = "/imgs/check2.png";
 
         check.classList.add('check-icon');
 
@@ -217,16 +219,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-  });
+  })
 
-  
+const inputName = document.querySelector(".input1");
+const inputGmail = document.querySelector(".input2");
+const inputEmpress = document.querySelector(".input3");
+const inputTel = document.getElementById("phone");                                       
+const inputArea = document.querySelector(".container-msg textarea");;
+
+btnCta.addEventListener("click", () => {
+
+
+const dados = {
+    nome: inputName.value,
+    email: inputGmail.value,
+    empresa: inputEmpress.value,
+    telefone: inputTel.value,
+    telefone2: iti.getNumber(),
+    mensagem: inputArea.value
+};
 
 
 
+fetch("http://localhost:3000/usuarios", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dados)
+})
+.then(response => response.json())
+.then(data => {
+  console.log("resposta:", data)
+})
+.catch(error => {console.error("Erro:", error)});
+
+  })
+
+})
 
 
 
-});
 
 
 

@@ -13,7 +13,7 @@ document.addEventListener("click", function(e) {
         e.target.classList.contains("btn-cta") ||
         e.target.classList.contains("btn-important")
     ) {
-        window.location.href = "contact.html";
+        window.location.href = "contact2.html";
     }
 });
 
@@ -35,7 +35,31 @@ const hdn = document.querySelector("header nav")
 
 const bar = document.querySelector(".bar")
 
+const menuImp = document.querySelector(".menu-imp")
+
+const menuIc = document.getElementById("menuIcon")
+
 document.addEventListener("scroll", scrollHeader);
+
+  const menuIc1 = document.querySelector(".menu-icon span:nth-child(1)")
+  const menuIc2 = document.querySelector(".menu-icon span:nth-child(2)")
+  const menuIc3 = document.querySelector(".menu-icon span:nth-child(3)")
+
+menuIc.addEventListener("click", () => {
+  if( menuIc.classList.contains("active")){
+    menuIc.classList.remove("active");
+    menuImp.classList.remove("active");
+   menuImp.style.opacity = "0"
+   menuImp.style.display = "none"
+    }
+  else{
+    menuIc.classList.toggle("active");
+       menuImp.classList.toggle("active");
+      menuImp.style.opacity = "1"
+      menuImp.style.display = "flex"
+  }
+ 
+  });
 
 
 

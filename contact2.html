@@ -16,27 +16,48 @@
 <body>
 
     <header>
-        <div class="header-container">
-            <div class="space">
-                <img class="img-logo" src="imgs/sneeze.png" alt="Logo da Sneezeify Web Studio">
-                <section class="logo"></section>
-            </div>
-            <nav>
-                <ul class="btn-principal">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li> <button class="btn-important">Peça um orçamento ➜</button> </li>
-                </ul>
-            </nav>
+    <div class="header-container">
+      <div class="space">
+        <img class="img-logo" src="imgs/sneeze.png" alt="Logo da Sneezeify Web Studio">
+        <div class="logo-text">
+          <span class="logo-title">SNEEZEIFY</span>
+          <span class="logo-subtitle">STUDIO</span>
         </div>
-    </header>
+      </div>       
+         <div class="menu-icon" id="menuIcon" class="bar">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
+
+      <nav class="menu-p">
+        <ul class="btn-principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a id="redserv" href="index.html#servicos">Serviços</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+
+
+    </div>
+
+  </header>
+    
+  <div class="menu-imp"> 
+     <ul class="btn-principal">
+          <li class="line"> <img src="imgs/home2.png"> <img src="imgs/home1.png"> <a href="index.html">Início</a>  </li>
+          <li class="line">  <img src="imgs/serv2.png"> <img src="imgs/serv1.png"> <a id="redserv"  href="index.html#servicos">Serviços</a> </li>
+          <li class="line"> <img src="imgs/chat2.png">  <img src="imgs/chat.png"> <a href="info - Copia.html">Contato</a>  </li>
+        </ul>
+    </div>
 
     <main>
         <section class="cta-contact">
 
-            <img src="imgs/waves.png">
+           <video class="hero-video" autoplay loop muted>
+          <source src="imgs/waves2.mp4" type="video/mp4">
+        </video>
 
             <p class="phill"><strong class="ball">●</strong> FORMULÁRIO DE CONTATO</p>
             <div>
@@ -205,7 +226,7 @@
     </main>
 
 </body>
-<script type="module" src="script.js"></script>
+
 <script type="module" src="/tel.js"></script>
 
 </html>

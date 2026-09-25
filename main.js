@@ -22,15 +22,15 @@ function createAnimation() {
 }
 function size() {
 
-if (window.innerWidth <= 1400 && window.innerWidth > 730 ) {
+if (window.innerWidth <= 1400 && window.innerWidth > 731 ) {
 startValue = "+=1000";
 endValue = "+=6000";
  console.log("MENOR");
 }
 
-else if (window.innerWidth <= 741) {
+else if (window.innerWidth <= 730) {
 startValue = "+=2100";
-endValue = "+=2150";
+endValue = "+=1900";
  console.log("MENOR");
 }
 
