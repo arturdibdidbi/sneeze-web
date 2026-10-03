@@ -1,7 +1,8 @@
 
 import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
-import { kn } from "intl-tel-input/i18n";
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const phone = document.getElementById("phone");
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const li = document.querySelectorAll("#project-type > li");
 
   li.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (event) {
 
       if (item.classList.contains('active')) {
 
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const li3 = document.querySelectorAll("#investment-amount > li");
 
   li3.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (event) {
 
       if (item.classList.contains('active')) {
 
@@ -175,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const li4 = document.querySelectorAll("#delivery-deadline > li");
 
   li4.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (event) {
 
       if (item.classList.contains('active')) {
 
@@ -221,43 +222,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   })
 
+  
 const inputName = document.querySelector(".input1");
 const inputGmail = document.querySelector(".input2");
 const inputEmpress = document.querySelector(".input3");
 const inputTel = document.getElementById("phone");                                       
-const inputArea = document.querySelector(".container-msg textarea");;
+const inputArea = document.querySelector(".container-msg textarea");
 
 btnCta.addEventListener("click", () => {
+   const dados = {
+        nome: inputName.value,
+        email: inputGmail.value,
+        empresa: inputEmpress.value,
+        telefone: inputTel.value,
+        telefone2: iti.getSelectedCountryData().dialCode,
+        mensagem: inputArea.value,
+        outrasInformacoes: Array.from(document.querySelectorAll("li.active")).map(li => li.textContent.trim()),
+    };
 
-
-const dados = {
-    nome: inputName.value,
-    email: inputGmail.value,
-    empresa: inputEmpress.value,
-    telefone: inputTel.value,
-    telefone2: iti.getNumber(),
-    mensagem: inputArea.value
-};
-
-
-
-fetch("http://localhost:3000/usuarios", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(dados)
-})
-.then(response => response.json())
-.then(data => {
-  console.log("resposta:", data)
-})
-.catch(error => {console.error("Erro:", error)});
-
-  })
+    fetch("http://localhost:3000/usuarios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Resposta:", data);
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
 
 })
-
+})
 
 
 

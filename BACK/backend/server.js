@@ -1,53 +1,60 @@
-const express = require("express");
-const mongoose = require("mongoose");
-require("dotenv").config();
+ import { MongoClient, ServerApiVersion } from 'mongodb';
+ import express from "express";
+ import cors from "cors"
+ import dotenv from "dotenv";
 
-const app = express();
+ dotenv.config();
 
-app.use(express.json());
+ const app = express()
+ const port = 3000
+ 
+ app.use(cors());
+ app.use(express.json());
+  app.listen(port, () => {
 
-app.post("/usuarios", (req, res) => {
-    const nome = req.body.nome;
-    const email = req.body.email;
-    const empresa = req.body.empresa;
-    const telefone = req.body.telefone;
-    const telefone2 = req.body.telefone2;
-    const mensagem = req.body.mensagem;
+  console.log(`servidor rodando na porta ${port}`)
 
-    console.log("Dados do cliente:", nome);
+  })
+  
 
-    res.json({
-        msg: "Usuário recebido!",
-        nome: nome,
-        email: email,
-    empresa: empresa,
-    telefone: telefone,
-    telefone2: telefone2,
-    mensagem: mensagem
-    });
+ app.post("/usuarios", async (req, res) => {
+ 
+  const dados = req.body
+  const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
 });
 
-app.listen(3000, () => {
-    console.log("Servidor http://localhost:3000");
-});
 
-const usuarioSchema = new mongoose.Schema({
-    nome: String,
-    email: String,
-    empresa: String,
-    telefone: String,
-    telefone2: String,
-    mensagem: String
-});
 
-const Usuario = mongoose.model("Usuario", usuarioSchema);
+ async function runStableAPIConnect() {
+  try {
+     await client.connect()
+      const db = client.db("Sneeze_web");
+      const collection = db.collection("Dados_dos_clientes");
+      await collection.insertOne(dados)
 
-mongoose.connect(process.env.MONGO_URL)
-.then(() => {
-   console.log("Conexão estabelecida")
+   
+    console.log('Dados enviados!')
+  } finally {
+    await client.close();
+  }
+}   
+  try{
+   await runStableAPIConnect()
+   res.send('Servidor rodando com sucesso!')
+  } catch (error) {
+  
+   res(status(500)).send('erro ao salvar os dados.')
 
-})
-.catch((erro) => {
-   console.error("Erro", erro)
+  }
+  
+ })
+ 
 
-})
+ 
+  
